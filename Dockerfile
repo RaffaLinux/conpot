@@ -1,6 +1,10 @@
 FROM python:3.8 AS conpot-builder
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update 
+RUN apt install apt-transport-https iputils-ping traceroute iproute2 -y
+RUN apt install net-tools iproute2 iputils-ping traceroute -y
+RUN apt install procps -y
+RUN apt-get install -y \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
